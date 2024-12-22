@@ -6,15 +6,11 @@ Last Build Date : 22-12-2024
 
 Device : Xiaomi 11T Pro ( vili )
 
-=Notes=
-Ksu removed but you can also find a KernelSU boot.im
-https://sourceforge.net/projects/vili-roms/files/Ksu/
-
 22.12.2024
 Update Bliss V18.1
 Updated common blobs
 Improvements to system performance and stability 
-Ksu removed but you can also find a KernelSU boot.im
+Ksu removed but you can also find a KernelSU boot.img
 https://sourceforge.net/projects/vili-roms/files/Ksu/
  
 
