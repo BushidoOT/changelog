@@ -9,6 +9,19 @@ Device : Xiaomi 11T Pro ( vili )
 
 
 Changelog
+18/12/2024
+Notable ROM changes:
+==============================
+- Missing DNS options added
+- Per-app volume added
+- Missing Settings animations added
+- Wi-Fi MAC address randomization option added
+- Settings config to hide Now Playing on non-Pixel devices added
+- Add back Unrestricted battery usage option to App battery usage screen
+- Sound, Data Switch, Volume panel, Locale, Preferred network type QS tiles added
+- added Smart 5G & swipe to screenshot
+- and update rom sources
+
 06.12.2024
 
 •Bluetooth headphones bug fix
