@@ -11,7 +11,8 @@ Update Bliss V18.1
 Updated common blobs
 Improvements to system performance and stability 
 Ksu removed but you can also find a KernelSU boot.img
-https://sourceforge.net/projects/vili-roms/files/Ksu/
+[**Ksu**](https://sourceforge.net/projects/vili-roms/files/Ksu/)
+
  
 
 
