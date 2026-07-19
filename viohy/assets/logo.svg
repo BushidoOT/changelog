@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 160" role="img" aria-labelledby="title desc">
+  <title id="title">VIOHY</title>
+  <desc id="desc">Turkuaz, mavi ve mor geçişli VIOHY logosu</desc>
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#35e6d1"/>
+      <stop offset=".5" stop-color="#4c8fff"/>
+      <stop offset="1" stop-color="#aa62f5"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#2f6bf4"/>
+      <stop offset="1" stop-color="#c35ef2"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(8 8)">
+    <path d="M18 30c0-10 12-16 20-10l43 34c6 5 14 5 20 0l43-34c8-6 20 0 20 10 0 3-1 6-3 8l-55 70c-12 15-34 15-46 0L5 38c-2-2-3-5-3-8Z" fill="url(#g1)"/>
+    <path d="M30 26 78 91c7 10 22 10 30 0l48-65-50 84c-9 15-32 15-41 0Z" fill="url(#g2)" opacity=".76"/>
+    <circle cx="83" cy="17" r="14" fill="url(#g1)"/>
+  </g>
+  <g fill="url(#g1)">
+    <path d="M205 47h19l25 63 25-63h18l-34 83h-19Z"/>
+    <path d="M311 47h17v83h-17Z"/>
+    <path fill-rule="evenodd" d="M386 44c25 0 45 19 45 44s-20 45-45 45-45-20-45-45 20-44 45-44Zm0 17c-15 0-27 12-27 27 0 16 12 28 27 28 16 0 28-12 28-28 0-15-12-27-28-27Z"/>
+    <path d="M444 47h17v32h35V47h17v83h-17V96h-35v34h-17Z"/>
+    <path d="M521 47h20l20 31 20-31h19l-31 48v35h-17V95Z" transform="translate(-35)"/>
+  </g>
+</svg>
