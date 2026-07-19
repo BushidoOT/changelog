@@ -1,5 +1,17 @@
 document.addEventListener('DOMContentLoaded',()=>{
   const share=document.querySelector('[data-share]');
+  if(share){
+    const oldIcon=share.querySelector('svg');
+    if(oldIcon){
+      const image=document.createElement('img');
+      image.src='/assets/share.svg';
+      image.alt='';
+      image.width=17;
+      image.height=17;
+      oldIcon.replaceWith(image);
+    }
+  }
+
   const toast=document.querySelector('.share-toast');
   const showToast=(text='Bağlantı kopyalandı')=>{
     if(!toast)return;
@@ -8,6 +20,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     clearTimeout(window.__viohyToast);
     window.__viohyToast=setTimeout(()=>toast.classList.remove('show'),1800);
   };
+
   share?.addEventListener('click',async()=>{
     const url=share.dataset.url||location.href;
     const title=share.dataset.title||document.title;
