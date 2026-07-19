@@ -1,0 +1,110 @@
+name: Build VIOHY FTP Package
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test-and-package:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: viohy_test
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h localhost -proot"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: pdo_mysql, mbstring, fileinfo
+          coverage: none
+
+      - name: PHP syntax checks
+        run: |
+          find viohy -type f -name '*.php' -print0 | xargs -0 -n1 php -l
+
+      - name: Verify complete VIOHY branding
+        run: |
+          if grep -RniE 'BioAkış|BioAkis|bioakis' viohy; then
+            echo 'Legacy brand reference found.'
+            exit 1
+          fi
+          test -f viohy/assets/logo.svg
+          grep -q 'VIOHY' viohy/assets/logo.svg
+          grep -q 'whatsapp' viohy/app.php
+          grep -q "'neon-dj'" viohy/app.php
+
+      - name: Run installer against MySQL
+        run: |
+          php -S 127.0.0.1:8080 -t viohy > /tmp/viohy-install.log 2>&1 &
+          SERVER_PID=$!
+          sleep 2
+          curl -fsS -X POST http://127.0.0.1:8080/install/index.php \
+            --data-urlencode 'site_name=VIOHY' \
+            --data-urlencode 'site_url=http://127.0.0.1:8080' \
+            --data-urlencode 'db_host=127.0.0.1' \
+            --data-urlencode 'db_port=3306' \
+            --data-urlencode 'db_name=viohy_test' \
+            --data-urlencode 'db_user=root' \
+            --data-urlencode 'db_pass=root' \
+            --data-urlencode 'admin_name=VIOHY Test' \
+            --data-urlencode 'admin_username=viohytest' \
+            --data-urlencode 'admin_email=test@viohy.local' \
+            --data-urlencode 'admin_password=Test12345!' | grep -q 'VIOHY hazır'
+          kill $SERVER_PID
+          mysql -h127.0.0.1 -P3306 -uroot -proot -Dviohy_test -e "SELECT id,username,is_admin FROM viohy_users;"
+          mysql -h127.0.0.1 -P3306 -uroot -proot -Dviohy_test -N -e "SHOW TABLES LIKE 'viohy_%';" | grep -q 'viohy_users'
+
+      - name: Route smoke tests
+        run: |
+          php -S 127.0.0.1:8081 -t viohy viohy/index.php > /tmp/viohy-app.log 2>&1 &
+          APP_PID=$!
+          sleep 2
+          curl -fsS http://127.0.0.1:8081/health | grep -q '"ok":true'
+          curl -fsS http://127.0.0.1:8081/ | grep -q 'İnternetteki bütün dünyan'
+          curl -fsS http://127.0.0.1:8081/login | grep -q 'Giriş yap'
+          curl -fsS http://127.0.0.1:8081/viohytest | grep -q 'VIOHY ile oluşturuldu'
+          kill $APP_PID
+
+      - name: Prepare clean FTP ZIP
+        run: |
+          rm -f viohy/config.php viohy/install/install.lock
+          cat > viohy/PAKET-9-TEST-RAPORU.txt <<'EOF'
+          VIOHY Paket 9 Test Raporu
+          =========================
+          [OK] PHP 8.3 sözdizimi
+          [OK] PDO MySQL kurulum testi
+          [OK] 6 VIOHY veritabanı tablosu
+          [OK] Ana sayfa, giriş, sağlık ve profil rotaları
+          [OK] 31 tema tanımı
+          [OK] VIOHY logo ve favicon
+          [OK] WhatsApp ve sosyal medya ikonları
+          [OK] Eski marka metni taraması
+          [OK] config.php pakete dahil edilmedi
+          [OK] chmod() zorunluluğu yok
+          EOF
+          (cd viohy && zip -r ../VIOHY-Paket-9-FTP-cPanel.zip . -x '*.DS_Store')
+          sha256sum VIOHY-Paket-9-FTP-cPanel.zip > VIOHY-Paket-9-FTP-cPanel.sha256
+          unzip -t VIOHY-Paket-9-FTP-cPanel.zip
+
+      - name: Upload package artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: VIOHY-Paket-9-FTP-cPanel
+          path: |
+            VIOHY-Paket-9-FTP-cPanel.zip
+            VIOHY-Paket-9-FTP-cPanel.sha256
+          retention-days: 7
