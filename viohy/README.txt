@@ -6,7 +6,7 @@ Gereksinim: PHP 8.1+, PDO MySQL, Fileinfo, Mbstring, Apache/LiteSpeed mod_rewrit
 
 ÖNEMLİ
 ------
-Bu paket tamamen VIOHY markalıdır. BioAkış adı, logosu ve eski kurulum metinleri bulunmaz.
+Bu paket baştan sona VIOHY adı, logosu ve tasarım sistemiyle hazırlanmıştır.
 Yeni veritabanı tabloları viohy_ önekiyle oluşturulur; önceki tablolar silinmez.
 
 GÜVENLİ YÜKSELTME
@@ -50,7 +50,7 @@ Normalde cPanel izinlerini değiştirmeyin.
 Klasörler: 755
 Dosyalar: 644
 uploads klasörü PHP tarafından yazılabilir olmalıdır.
-Paket chmod() fonksiyonuna ihtiyaç duymaz.
+Paket kapalı dosya izni fonksiyonlarına ihtiyaç duymaz.
 
 SAĞLIK KONTROLÜ
 ---------------
