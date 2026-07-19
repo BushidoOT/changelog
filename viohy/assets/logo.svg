@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 160" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 160" role="img" aria-labelledby="title desc">
   <title id="title">VIOHY</title>
   <desc id="desc">Turkuaz, mavi ve mor geçişli VIOHY logosu</desc>
   <defs>
@@ -17,11 +17,5 @@
     <path d="M30 26 78 91c7 10 22 10 30 0l48-65-50 84c-9 15-32 15-41 0Z" fill="url(#g2)" opacity=".76"/>
     <circle cx="83" cy="17" r="14" fill="url(#g1)"/>
   </g>
-  <g fill="url(#g1)">
-    <path d="M205 47h19l25 63 25-63h18l-34 83h-19Z"/>
-    <path d="M311 47h17v83h-17Z"/>
-    <path fill-rule="evenodd" d="M386 44c25 0 45 19 45 44s-20 45-45 45-45-20-45-45 20-44 45-44Zm0 17c-15 0-27 12-27 27 0 16 12 28 27 28 16 0 28-12 28-28 0-15-12-27-28-27Z"/>
-    <path d="M444 47h17v32h35V47h17v83h-17V96h-35v34h-17Z"/>
-    <path d="M521 47h20l20 31 20-31h19l-31 48v35h-17V95Z" transform="translate(-35)"/>
-  </g>
+  <text x="195" y="115" fill="url(#g1)" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="800" letter-spacing="8">VIOHY</text>
 </svg>
