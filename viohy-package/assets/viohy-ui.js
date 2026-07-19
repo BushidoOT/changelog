@@ -2,7 +2,9 @@
   'use strict';
 
   const BRAND_RE = /BioAkış|BioAkis|BİOAKIŞ/g;
+  const BRAND_TEST_RE = /BioAkış|BioAkis|BİOAKIŞ/;
   const BRAND_LOWER_RE = /bioakis\.com|bioakış\.com/gi;
+  const BRAND_LOWER_TEST_RE = /bioakis\.com|bioakış\.com/i;
   const logoUrl = '/assets/viohy/viohy-mark.svg';
 
   function ready(fn) {
@@ -16,7 +18,8 @@
       acceptNode(node) {
         const parent = node.parentElement;
         if (!parent || ['SCRIPT', 'STYLE', 'TEXTAREA', 'CODE', 'PRE'].includes(parent.tagName)) return NodeFilter.FILTER_REJECT;
-        return BRAND_RE.test(node.nodeValue || '') || BRAND_LOWER_RE.test(node.nodeValue || '')
+        const value = node.nodeValue || '';
+        return BRAND_TEST_RE.test(value) || BRAND_LOWER_TEST_RE.test(value)
           ? NodeFilter.FILTER_ACCEPT
           : NodeFilter.FILTER_REJECT;
       }
@@ -125,7 +128,7 @@
 
   function improveImagesAndLinks() {
     document.querySelectorAll('img').forEach(img => {
-      if (!img.loading) img.loading = 'lazy';
+      if (!img.hasAttribute('loading')) img.loading = 'lazy';
       img.decoding = 'async';
       img.addEventListener('error', () => {
         img.classList.add('viohy-image-fallback');
@@ -141,7 +144,7 @@
 
   function labelIconButtons() {
     document.querySelectorAll('button, [role="button"]').forEach(button => {
-      if (button.textContent.trim() || button.getAttribute('aria-label')) return;
+      if ((button.textContent || '').trim() || button.getAttribute('aria-label')) return;
       const title = button.getAttribute('title') || 'İşlem';
       button.setAttribute('aria-label', title);
     });
