@@ -1,0 +1,42 @@
+VIOHY 9.2 — PREMIUM TEMA GÜNCELLEMESİ
+=====================================
+
+Bu sürüm mevcut VIOHY panelini ve veritabanını korur; yalnız kullanıcıya açık profil/tema görünümünü baştan tasarlar.
+
+GÜNCELLENENLER
+--------------
+- 31 temanın tamamı modern renk, yüzey, gölge ve tipografi sistemiyle yenilendi.
+- Mobil profil genişliği ve boşlukları düzeltildi.
+- Kapak + avatar alanı modern tek parça hero yapısına taşındı.
+- Sosyal medya ikonları markalı renklerle gösterilir.
+- WhatsApp, Instagram, TikTok, YouTube, Spotify, X, Facebook, Telegram ve Discord ikonları tamamlandı.
+- Bağlantı kartları modern ve platforma göre renkli hale getirildi.
+- Ürün/hizmet/menü/etkinlik kartları iki sütunlu modern vitrine dönüştürüldü.
+- İletişim formu sayfayı uzatmaması için modern açılır panele çevrildi.
+- WhatsApp sabit iletişim düğmesi yenilendi.
+- Paylaş düğmesi ve bağlantı kopyalama desteği eklendi.
+- Editorial, glass, neon, aurora, grid, pixel, paper, soft ve flow düzenleri birbirinden ayrıştırıldı.
+- Panel, kullanıcılar ve mevcut MySQL verileri korunur.
+
+FTP İLE YÜKLEME
+----------------
+1. Mevcut public_html klasörünün yedeğini alın.
+2. ZIP dosyasını bilgisayarda çıkartın.
+3. Oluşan klasörün İÇİNDEKİ tüm dosyaları FTP ile public_html içine yükleyin.
+4. Sorulduğunda dosyaların üzerine yazılmasına izin verin.
+5. config.php ve uploads klasörünüz korunmalıdır. Pakette config.php yoktur.
+6. Veritabanı kurulumu yapmayın; bu sürümde şema değişikliği yoktur.
+7. Yükleme bitince tarayıcıda gizli sekme açın veya Ctrl+F5 yapın.
+8. Profil adresini kontrol edin: https://viohy.com/kullaniciadi
+
+YENİ ANA DOSYALAR
+-----------------
+profile.php
+assets/themes-v2.css
+assets/profile-theme.js
+assets/share.svg
+.htaccess
+
+GERİ DÖNÜŞ
+----------
+Sorun olursa yedeklediğiniz .htaccess dosyasını geri yükleyip profile.php ve assets/themes-v2.css dosyalarını silebilirsiniz.
