@@ -1,3 +1,0 @@
-VIOHY Paket 9
-Build: 2026-07-20
-FTP/cPanel release candidate
