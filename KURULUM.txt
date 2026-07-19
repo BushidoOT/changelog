@@ -1,0 +1,48 @@
+VIOHY PAKET 9 — MODERN FTP GÜNCELLEMESİ
+========================================
+
+Bu paket, viohy.com üzerinde kurulu Paket 8 PHP/cPanel sürümünü yerinde günceller.
+Mevcut veritabanını, kullanıcı hesaplarını, profil içeriklerini ve yüklenen görselleri silmez.
+
+PAKETTEKİLER
+-------------
+- Üçüncü VIOHY logo konseptine uygun SVG logo ve favicon
+- Görünen BioAkış / BioAkis marka metinlerinin VIOHY olarak temizlenmesi
+- Modern gradient butonlar, kartlar, form alanları ve tablolar
+- Mobil ekran ve yatay tablo kaydırma iyileştirmeleri
+- Formların çift gönderilmesini önleme
+- Şifre göster/gizle düğmesi
+- Aktif menü işaretleme
+- Harici bağlantı güvenliği ve görsel yükleme iyileştirmeleri
+- Değişen dosyalar için otomatik yedek
+- install klasörü ve eski paket dokümanlarının temizlenmesi
+- Temel .htaccess güvenlik başlıkları
+
+KURULUM
+-------
+1. Bu ZIP'i bilgisayarında çıkart.
+2. ZIP içindeki ana klasöre gir.
+3. VIOHY-GUNCELLE.php dosyasını ve viohy-package klasörünü FTP ile public_html içine yükle.
+4. Tarayıcıdan https://viohy.com/VIOHY-GUNCELLE.php adresini aç.
+5. "VIOHY güncellemesini başlat" düğmesine bas.
+6. İşlem tamamlandıktan sonra siteyi Ctrl+F5 ile yenile.
+7. Güncelleme ekranındaki "Paket kaynaklarını temizle" düğmesine bas.
+8. FTP/cPanel üzerinden VIOHY-GUNCELLE.php dosyasını sil.
+
+YEDEK
+-----
+Güncelleyici, değiştirdiği dosyaları public_html içinde şu biçimde bir klasöre yedekler:
+_viohy_backup_YYYYMMDD_HHMMSS
+
+Siteyi kontrol ettikten sonra bu yedeği bilgisayarına indirip sunucudan silebilirsin.
+
+ÖNEMLİ
+------
+- config.php dosyasını ve uploads klasörünü silme.
+- Güncelleme sırasında tarayıcı sekmesini kapatma.
+- İşlem sonrası güncelleyici PHP dosyasını mutlaka sil.
+- Güncelleme veritabanı şifresini veya yönetici şifresini istemez.
+
+SÜRÜM: 9.0.0
+ALTYAPI: PHP 8.2/8.3 + MySQL/MariaDB + cPanel/LiteSpeed
+DOMAIN: viohy.com

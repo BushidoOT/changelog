@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">VIOHY</title>
+  <desc id="desc">Aqua, mavi ve mor gecisli, yuvarlak V simgesi</desc>
+  <defs>
+    <linearGradient id="left" x1="28" y1="36" x2="154" y2="192" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#34f1da"/>
+      <stop offset="0.55" stop-color="#48b6ff"/>
+      <stop offset="1" stop-color="#5d6cff"/>
+    </linearGradient>
+    <linearGradient id="right" x1="210" y1="34" x2="94" y2="192" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d46cff"/>
+      <stop offset="0.52" stop-color="#9864ff"/>
+      <stop offset="1" stop-color="#477cff"/>
+    </linearGradient>
+    <linearGradient id="dot" x1="98" y1="18" x2="142" y2="62" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#a767ff"/><stop offset="1" stop-color="#42c8ff"/>
+    </linearGradient>
+    <filter id="soft" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#4969e8" flood-opacity=".18"/>
+    </filter>
+  </defs>
+  <g filter="url(#soft)">
+    <circle cx="120" cy="41" r="22" fill="url(#dot)"/>
+    <path d="M43 62 L102 157 C111 172 126 172 136 157 L197 61" fill="none" stroke="url(#left)" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M197 61 L139 154 C130 170 112 172 102 156 L43 62" fill="none" stroke="url(#right)" stroke-width="38" stroke-linecap="round" stroke-linejoin="round" opacity=".88"/>
+  </g>
+</svg>

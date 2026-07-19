@@ -1,0 +1,24 @@
+VIOHY PAKET 9 KONTROL LİSTESİ
+=============================
+
+[ ] viohy.com ana sayfası açılıyor
+[ ] /login sayfasında VIOHY logosu görünüyor
+[ ] Panel üst/yan menüsünde BioAkış yazısı kalmadı
+[ ] Tarayıcı sekmesinde VIOHY yazıyor
+[ ] Favicon VIOHY simgesi oldu
+[ ] Butonlar modern gradient görünümde
+[ ] Form alanları odaklanınca mavi/mor focus halkası gösteriyor
+[ ] Tablolar mobilde yatay kaydırılabiliyor
+[ ] Şifre alanlarında göster/gizle düğmesi çalışıyor
+[ ] Form düğmesine çift tıklayınca iki kayıt oluşmuyor
+[ ] Mobil panelde taşma veya yatay ekran bozulması yok
+[ ] Profil sayfaları ve 31 tema açılıyor
+[ ] Kullanıcı giriş ve çıkış işlemleri çalışıyor
+[ ] Yönetim paneli açılıyor
+[ ] Ürün/içerik/link kayıtları korunuyor
+[ ] uploads içindeki görseller açılıyor
+[ ] /install artık erişilemiyor
+[ ] VIOHY-GUNCELLE.php işlem sonrası silindi
+[ ] _viohy_backup_... klasörü bilgisayara indirildi
+
+Bir sorun görülürse önce _viohy_backup_... klasöründeki ilgili dosyayı geri yükle.
