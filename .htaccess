@@ -11,6 +11,10 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
+# Tek parçalı kullanıcı profillerini yeni premium tema motoruna gönder.
+RewriteRule ^(?!login/?$|register/?$|logout/?$|dashboard(?:/|$)|admin/?$|go(?:/|$)|health/?$|install(?:/|$))([A-Za-z0-9._-]{3,30})/?$ profile.php?u=$1 [QSA,L,NC]
+
+# Panel, giriş, kayıt, analiz ve diğer uygulama yolları ana yönlendiricide kalır.
 RewriteRule ^ index.php [QSA,L]
 </IfModule>
 
@@ -21,6 +25,6 @@ Header always set Referrer-Policy "strict-origin-when-cross-origin"
 Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(self)"
 </IfModule>
 
-<FilesMatch "^(config\.php|app\.php)$">
+<FilesMatch "^(config\.php|app\.php|templates\.php)$">
 Require all denied
 </FilesMatch>
