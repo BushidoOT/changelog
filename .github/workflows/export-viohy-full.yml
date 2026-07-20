@@ -1,0 +1,32 @@
+name: Export VIOHY Full Package
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout package branch
+        uses: actions/checkout@v4
+
+      - name: Build clean full package
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p export
+          rsync -a --exclude='.git' --exclude='.github' --exclude='export' ./ export/
+          cd export
+          zip -r ../VIOHY-Full-Base.zip .
+
+      - name: Upload full package
+        uses: actions/upload-artifact@v4
+        with:
+          name: viohy-full-base
+          path: VIOHY-Full-Base.zip
+          if-no-files-found: error
+          retention-days: 1
